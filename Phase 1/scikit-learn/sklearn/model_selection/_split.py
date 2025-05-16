@@ -1162,6 +1162,9 @@ class _RepeatedSplits(metaclass=ABCMeta):
         cv = self.cv(random_state=rng, shuffle=True,
                      **self.cvargs)
         return cv.get_n_splits(X, y, groups) * self.n_repeats
+        
+    def __repr__(self):
+        return _build_repr(self)
 
 
 class RepeatedKFold(_RepeatedSplits):
